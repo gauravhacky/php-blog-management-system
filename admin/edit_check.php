@@ -6,6 +6,9 @@ include "dashboard.php";
 <?php
 if(isset($_POST['publish']))
 {
+    $id=$_GET['id'];
+    $id=mysqli_real_escape_string($connection,$id);
+    $id=htmlentities($id);
     $content= $_POST['ckeditor'];
     $content=mysqli_real_escape_string($connection,$content);
     $content=htmlentities($content);
@@ -15,17 +18,17 @@ if(isset($_POST['publish']))
     $author=$_SESSION['username'];
     //echo "Title is ".$title."<br/>";
     //echo "Content is ".$data."<br/>";
-    $sql="insert into posts (title,content,author) value('$title','$content','$author')";
+    $sql="update posts set title='$title',content='$content',author='$author' where id=$id";
     $res=mysqli_query($connection,$sql);
     if($res)
     {
-        $_SESSION['message']="<div class='chip green white-text'>Post is Published</div>";
-        header("Location: write.php");
+        $_SESSION['message']="<div class='chip green white-text'>Post is Updated.</div>";
+        header("Location: edit.php?id=".$id);
     }
     else 
-    {
+    { 
         $_SESSION['message']="<div class='chip red black-text'>Sorry, Something went wrong.</div>";
-        header("Location: write.php");
+        header("Location: edit.php?id=".$id);
     }
 
 }

@@ -40,12 +40,15 @@ include "../admin/includes/db.php";
 </div>
 </form>
 <script>
-         $(document).ready(function() {
-             $('.button-collapse').sideNav();
-         });
-      </script>
-      <script>
+$(document).ready(function() {
+        $('.button-collapse').sideNav();
+        $('textarea').each(function(){
+        $(this).val($(this).val().trim());
+        }
+    );
+    });
+    </script>
+    <script>
   CKEDITOR.replace( 'editor1' );
 </script>
   
-
