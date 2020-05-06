@@ -1,5 +1,7 @@
-# core-php-blog-management
-This is a blog management application where admin can write blog and post it and user can also comments in each blog and after that admin approve these comments and show into frontend,
+#core php blog management system
+#core php blog management application
+
+This is a blog management application with material rich design where admin can write blog and post it or user can see the blog or also comments in each blog and after that admin will approve these comments and then these comments will be display on frontend,this apllication is highly secured with highly tested.
 Admin Url:http://localhost/core_php_blog/admin/login.php
 
 Technologies Used
@@ -7,7 +9,8 @@ Technologies Used
 2.Java Script
 2.CSS3 
 3.Material Css
-3.PHP
-4.MySQLi
+4.Bootstrap4
+5.PHP
+6.MySQLi
 
 Instructions to Use
