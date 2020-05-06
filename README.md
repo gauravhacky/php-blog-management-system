@@ -9,3 +9,5 @@ Technologies Used
 3.Material Css
 3.PHP
 4.MySQLi
+
+Instructions to Use
