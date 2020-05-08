@@ -30,6 +30,11 @@
                    <?php
                   }
                }
+               else{
+                  
+                     echo "<div class='chip red white-text'>No Post in Database,Write By clicking down circular button.</div>";
+                  }
+               
                   ?> 
                   </ul>
             </div>

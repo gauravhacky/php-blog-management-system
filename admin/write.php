@@ -1,25 +1,8 @@
 <?php
-ob_start();
-include "../admin/includes/db.php";
+include "includes/nav.php" ;
+if(isset($_SESSION['username']))
+{
 ?>
-<!DOCTYPE html>
-<html>
-<head>
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <!--import material css-->
-    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" crossorigin="anonymous">
-    <link type="text/css" rel="stylesheet" href="../css/materialize.min.css" media="screen,projection" />
-    <link type="text/css" rel="stylesheet" href="../css/main.css" />
-    <link rel="stylesheet" href="../css/materialize.min.css">
-    <script type="text/javascript" src="../js/jquery.min.js"></script>
-    <script type="text/javascript" src="../js/validationscript.js"></script>
-    <script type="text/javascript" src="../js/formvalidation.js"></script>
-    <script type="text/javascript" src="//cdn.ckeditor.com/4.11.1/standard/ckeditor.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
-    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
-    <title>Write Post </title>
-</head>
-<?php include "includes/nav.php" ?>
 <div class="main">
 <form action="write_check.php" method="POST" name="writepost" id="writepost" enctype="multipart/form-data">
     <div class="card-panel">
@@ -31,12 +14,22 @@ include "../admin/includes/db.php";
      ?>
     <h5>Title For Post</h5>
     <textarea name="title" class="materialize-textarea" placeholder="Title for post">
-    </textarea>
+    </textarea> 
+    <h5>Feactured Image</h5>
+     <div class="input-field file-field">
+     <div class="btn">
+     Upload file
+     <input type="file" name="image">
+     </div>
+     <div class="file-path-wrapper">
+     <input type="text" class="file-path">
+     </div>
+     </div>
     <h5>Post Content</h5>
     <textarea name="ckeditor"  id="editor1" class="materialize-ckeditor" required="">
     </textarea>
     <div class="center">
-    <input type="submit" value="Pullish" name="publish" class="btn white-text" white-text>
+    <input type="submit" value="Publish" name="publish" class="btn white-text" white-text>
     </div>
     
 </div>
@@ -53,4 +46,11 @@ $(document).ready(function() {
     <script>
   CKEDITOR.replace( 'editor1' );
 </script>
+<?php
+}
+else{
+    $_SESSION['message']="<div class='chip red black-text'>Login To Continue</div>";
+    header("Location: login.php");
+}
+?> 
   

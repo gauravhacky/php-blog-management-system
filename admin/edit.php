@@ -12,7 +12,7 @@ if(isset($_GET['id']))
         $row=mysqli_fetch_assoc($res);
     ?>
     <div class="main">
-<form action="edit_check.php?id=<?php echo $id; ?>" method="POST" enctype="multipart/form-data">
+    <form action="edit_check.php?id=<?php echo $id; ?>" method="POST" enctype="multipart/form-data">
     <div class="card-panel">
     <?php if(isset($_SESSION['message']))
     {
@@ -35,7 +35,6 @@ if(isset($_GET['id']))
     <div class="center">
     <input type="submit" value="Update" name="publish" class="btn white-text" white-text>
     </div>
-    
 </div>
 </form>
 <script>
@@ -55,6 +54,5 @@ $(document).ready(function() {
     else{
         redirect("Location:dashboard.php");
     }
-
 }
 ?>

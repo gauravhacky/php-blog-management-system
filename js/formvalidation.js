@@ -7,7 +7,6 @@ $(document).ready(function () {
             },
             content: {
                 required: true,
-                
             }
          }
     });
