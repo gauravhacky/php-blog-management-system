@@ -6,7 +6,7 @@ include "includes/db.php";
 	  <li class="collection-item">
 	  <h4>Search</h4>
      <form method="post" action="search.php">
-<input type="text" id="search" name="searchdata" placeholder="Search Anything...">
+<input type="text" id="search" name="searchdata" placeholder="Search Anything..." required="">
 <input type="submit" class="btn" value="Search" name="submit">
 </form>
 		 </div>
