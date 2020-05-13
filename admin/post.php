@@ -14,9 +14,12 @@ if(isset($_SESSION['username']))
                   $sql="select * from posts order by id desc";
                   $res=mysqli_query($connection,$sql);
                   //print_r($res);
-                  if(mysqli_num_rows($res)>0) { while($row=mysqli_fetch_assoc($res)) { ?>
-
-                <li class="collection-item">
+                  if(mysqli_num_rows($res)>0) 
+                  { 
+                    while($row=mysqli_fetch_assoc($res)) 
+                    { 
+                        ?>
+                    <li class="collection-item">
                     <a href=""><?php echo $row['title']?></a>
                     <br />
                     <span>

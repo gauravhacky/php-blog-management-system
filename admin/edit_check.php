@@ -11,7 +11,7 @@ if(isset($_POST['publish']))
     $id=htmlentities($id);
     $content= $_POST['ckeditor'];
     $content=mysqli_real_escape_string($connection,$content);
-    $content=htmlentities($content);
+    //$content=htmlentities($content);
     $title=$_POST['title'];
     $title=mysqli_real_escape_string($connection,$title);
     $title=htmlentities($title);

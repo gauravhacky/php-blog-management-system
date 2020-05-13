@@ -8,7 +8,7 @@ if(isset($_POST['publish']))
 {
     $content= $_POST['ckeditor'];
     $content=mysqli_real_escape_string($connection,$content);
-    $content=htmlentities($content);
+    //$content=htmlentities($content);
     $title=$_POST['title'];
     $title=mysqli_real_escape_string($connection,$title);
     $title=htmlentities($title);
@@ -24,7 +24,7 @@ if(isset($_POST['publish']))
     {
         if($img_size <=2097152)
         {
-            move_uploaded_file($tmp_dir,"../img/".$img_name);
+         move_uploaded_file($tmp_dir,"../img/".$img_name);
     $sql="insert into posts (title,content,author,feature_image) value('$title','$content','$author','$img_name')";
     $res=mysqli_query($connection,$sql);
     if($res)

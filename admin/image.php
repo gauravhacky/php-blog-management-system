@@ -10,8 +10,10 @@ if($files)
     <?php
     foreach($files as $file)
     {
-    ?>
-    <div class="col 12 m3 s4">
+        if(strlen($file)>2)
+        {
+            ?>
+    <div class="col 12 m3 s6">
     <div class="card">
     <div class="card-image">
     <img src="../img/<?php echo $file;?>" alt="">
@@ -20,6 +22,7 @@ if($files)
     </div>
     </div>
  <?php  
+        }
 }
 }
 ?>
